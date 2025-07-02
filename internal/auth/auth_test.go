@@ -5,9 +5,7 @@ import (
 	"testing"
 )
 
-
-
-func TestAuth(t *testing.T){
+func TestAuth(t *testing.T) {
 	testHeader1 := http.Header{
 		"Authorization": []string{"ApiKey TestKey"},
 	}
@@ -15,20 +13,16 @@ func TestAuth(t *testing.T){
 		"Authorization": []string{"ApiKey TestKey2"},
 	}
 	cases := []struct {
-		testHeader http.Header
+		testHeader   http.Header
 		expectingKey string
-		
-
 	}{
 		{
-			testHeader: testHeader1,
+			testHeader:   testHeader1,
 			expectingKey: "TestKey",
-			
 		},
 		{
-			testHeader: testHeader2,
+			testHeader:   testHeader2,
 			expectingKey: "TestKey2",
-			
 		},
 	}
 
